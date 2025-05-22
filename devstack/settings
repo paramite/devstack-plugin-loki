@@ -1,0 +1,12 @@
+# DevStack settings
+define_plugin loki
+enable_service loki
+
+## Variables related to prometheus
+LOKI_VERSION=${LOKI_VERSION:-3.5.0}
+LOKI_ARCH=${LOKI_ARCH:-linux-amd64}
+LOKI_PROJECT_DIR=$DEST/devstack-plugin-loki
+LOKI_DEVSTACK_DIR=${LOKI_PROJECT_DIR}/devstack/files
+LOKI_DATA_DIRECTORY=${LOKI_DATA_DIRECTORY:-/var/lib/loki}
+LOKI_CONFIG_FILE=${LOKI_CONFIG_FILE:-${LOKI_DEVSTACK_DIR}/config.yml}
+LOKI_SYSTEMD_SERVICE=${LOKI_SYSTEMD_SERVICE:-devstack@loki.service}
